@@ -2,13 +2,12 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-// Helper: Fetch gold price (USD/gram)
 async function fetchGoldPrice() {
-  return 75; // USD/gram (static fallback)
+  return 75; 
 }
 
 module.exports = async (req, res) => {
-  // Enable CORS
+ 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
@@ -27,11 +26,10 @@ module.exports = async (req, res) => {
     const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
     const goldPrice = await fetchGoldPrice();
 
-    // Filtering
+ 
     let filtered = products;
     const { minPrice, maxPrice, minPopularity, maxPopularity } = req.query;
 
-    // Calculate price and popularity for each product
     filtered = filtered.map((product) => {
       const price = (product.popularityScore + 1) * product.weight * goldPrice;
       const popularityOutOf5 = (product.popularityScore * 5).toFixed(1);
@@ -43,7 +41,7 @@ module.exports = async (req, res) => {
       };
     });
 
-    // Apply filters if present
+  
     if (minPrice) filtered = filtered.filter(p => parseFloat(p.price) >= parseFloat(minPrice));
     if (maxPrice) filtered = filtered.filter(p => parseFloat(p.price) <= parseFloat(maxPrice));
     if (minPopularity) filtered = filtered.filter(p => parseFloat(p.popularityOutOf5) >= parseFloat(minPopularity));
