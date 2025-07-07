@@ -46,6 +46,7 @@ module.exports = async (req, res) => {
 
     res.json(filtered);
   } catch (err) {
+    console.error('API Error:', err);
     res.status(500).json({ error: 'Failed to load products.' });
   }
 }; 

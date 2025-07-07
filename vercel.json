@@ -9,6 +9,11 @@
       }
     }
   ],
+  "functions": {
+    "api/products/index.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
