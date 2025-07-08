@@ -1,19 +1,19 @@
 # Products Listing Application
 
-A professional, responsive web application for listing products with real-time pricing and advanced filtering. The project consists of a Node.js/Express backend and a React (Vite) frontend styled with Tailwind CSS and Swiper.js.
+A full-stack web application for listing products with dynamic pricing and filtering.
+
+- **Frontend:** React (Vite, Tailwind CSS, Swiper.js)
+- **Backend:** Node.js/Express (serves product data, dynamic pricing)
+
+## Deployment
+- Frontend: Deployable on Vercel (or similar platforms)
+- Backend: Deployable on Render (or similar platforms)
 
 ## Features
-- Dynamic product pricing based on real-time gold prices
-- Responsive product carousel with Swiper.js
-- Interactive color picker for product variants
-- Filtering and sorting by price and rating
-- Modern, mobile-friendly UI
+- Responsive product carousel
+- Color picker and popularity ratings
+- Sort and filter products
+- Real-time price calculation
 
-## Tech Stack
-- **Frontend:** React, Vite, Tailwind CSS, Swiper.js
-- **Backend:** Node.js, Express
-- **Styling:** Tailwind CSS, custom fonts
-
-## Extending
-- Add new filters, sorting options, or product details as needed.
-- Modular structure allows easy replacement or extension of UI components. 
+---
+For more details, see the frontend and backend folders. 
